@@ -7,9 +7,9 @@ const App = () => {
   return (
     <div className="min-h-screen bg-gray-200">
       <Header />
-      <main className=''>
+      <main>
         <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 flex flex-col items-center">
-          <h1 className='"text-5xl font-bold text-center text-gray-800 mt-10"'>
+          <h1 className="text-5xl font-bold text-center text-gray-800 mt-10">
             Welcome to Task Manager
           </h1>
           <p className="text-center text-gray-600 mt-5">

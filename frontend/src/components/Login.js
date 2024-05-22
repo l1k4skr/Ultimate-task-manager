@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { login } = useContext(AuthContext); // Usamos el contexto de autenticación
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Lógica de inicio de sesión
+    try {
+      await login({ email, password }); // Llama a la función de inicio de sesión del contexto
+      navigate("/dashboard");
+    } catch (error) {
+      console.error(error.response.data);
+    }
   };
 
   return (
