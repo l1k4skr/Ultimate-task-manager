@@ -13,8 +13,12 @@ const Login = () => {
     try {
       await login({ email, password }); // Llama a la función de inicio de sesión del contexto
       navigate("/dashboard");
+      console.log("Logged in")
+      
     } catch (error) {
       console.error(error.response.data);
+      console.log(email)
+      console.log(password)
     }
   };
 
